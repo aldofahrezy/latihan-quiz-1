@@ -29,7 +29,11 @@ SECRET_KEY = os.environ.get(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["localhost", "127.0.0.1", ".pythonanywhere.com"]
+# "testserver" adalah host yang dipakai Django test client, sehingga
+# menyertakannya membuat Client() juga dapat dipakai dari manage.py shell.
+ALLOWED_HOSTS = os.environ.get(
+    "DJANGO_ALLOWED_HOSTS", "localhost,127.0.0.1,testserver"
+).split(",")
 
 
 # Application definition
