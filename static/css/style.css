@@ -1,0 +1,86 @@
+:root {
+  --teks: #1b1f24;
+  --redup: #5b6572;
+  --garis: #d8dbe0;
+  --latar: #ffffff;
+  --panel: #f5f6f8;
+  --aksen: #1f5fa9;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  line-height: 1.6;
+  color: var(--teks);
+  background: var(--latar);
+}
+
+header {
+  border-bottom: 1px solid var(--garis);
+  background: var(--panel);
+}
+
+nav {
+  max-width: 52rem;
+  margin: 0 auto;
+  padding: 0.9rem 1rem;
+  display: flex;
+  gap: 1rem;
+  align-items: baseline;
+}
+
+.brand { font-weight: 700; color: var(--aksen); text-decoration: none; }
+
+main { max-width: 52rem; margin: 0 auto; padding: 1.5rem 1rem 3rem; }
+
+h1 { font-size: 1.6rem; margin-top: 0; }
+h2 { font-size: 1.2rem; }
+
+footer {
+  border-top: 1px solid var(--garis);
+  color: var(--redup);
+  font-size: 0.9rem;
+}
+
+footer p { max-width: 52rem; margin: 0 auto; padding: 1rem; }
+
+/* Dipakai mulai drill yang menampilkan daftar data. */
+.daftar { list-style: none; padding: 0; display: grid; gap: 0.75rem; }
+
+.daftar li {
+  border: 1px solid var(--garis);
+  border-radius: 6px;
+  padding: 0.85rem 1rem;
+  background: var(--panel);
+}
+
+.aksi { display: flex; gap: 0.5rem; margin-top: 0.5rem; }
+
+button {
+  font: inherit;
+  padding: 0.35rem 0.8rem;
+  border: 1px solid var(--garis);
+  border-radius: 5px;
+  background: var(--latar);
+  cursor: pointer;
+}
+
+button:hover { border-color: var(--aksen); color: var(--aksen); }
+
+.kosong { color: var(--redup); font-style: italic; }
+
+.galat { color: #b3261e; font-size: 0.9rem; }
+
+form p { margin: 0.5rem 0; }
+
+label { display: block; font-weight: 600; font-size: 0.9rem; }
+
+input, textarea, select {
+  font: inherit;
+  width: 100%;
+  padding: 0.4rem 0.55rem;
+  border: 1px solid var(--garis);
+  border-radius: 5px;
+}

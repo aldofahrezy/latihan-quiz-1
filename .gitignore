@@ -1,0 +1,29 @@
+# Virtual environment
+env/
+venv/
+.venv/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Django
+db.sqlite3
+db.sqlite3-journal
+/staticfiles/
+*.log
+
+# Pengujian dan cakupan
+.coverage
+.coverage.*
+htmlcov/
+.pytest_cache/
+
+# Perkakas
+.ruff_cache/
+
+# Editor dan sistem operasi
+.vscode/
+.idea/
+.DS_Store

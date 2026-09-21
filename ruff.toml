@@ -1,0 +1,13 @@
+line-length = 100
+target-version = "py311"
+
+exclude = ["env", "migrations"]
+
+[lint]
+select = [
+    "E",   # pycodestyle
+    "F",   # pyflakes
+    "I",   # isort, urutan impor
+    "UP",  # pyupgrade
+    "DJ",  # aturan khusus Django
+]

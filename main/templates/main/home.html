@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}Beranda{% endblock %}
+
+{% block content %}
+  <h1>Beranda</h1>
+
+  <p>
+    Proyek ini adalah titik awal untuk seluruh drill. Setiap drill menambahkan
+    satu lapisan: model, rute, view, form, template, kueri, endpoint data,
+    pengujian, lalu perapian kode.
+  </p>
+
+  {% comment %}
+    Mulai drill mengenai kueri dan edge case, blok di bawah ini diganti
+    dengan data sorotan yang dipilih di dalam view.
+  {% endcomment %}
+  <section class="sorotan">
+    <h2>Sorotan</h2>
+    <p>Belum ada data sorotan.</p>
+  </section>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}Latihan Django{% endblock %}</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+  <header>
+    <nav>
+      <a class="brand" href="{% url 'main:show_main' %}">Latihan Django</a>
+      {% block nav %}{% endblock %}
+    </nav>
+  </header>
+
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer>
+    {% block footer %}
+      <p>Proyek latihan Pemrograman Berbasis Platform.</p>
+    {% endblock %}
+  </footer>
+</body>
+</html>
