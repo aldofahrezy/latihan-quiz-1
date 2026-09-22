@@ -10,7 +10,7 @@ class Bookmark(models.Model):
     priority = models.PositiveIntegerField(default=0)
     is_archived = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
-    last_opened_at = models.DateTimeField(auto_now=True)
+    last_opened_at = models.DateTimeField(auto_now=True, null=True, blank=True)
     
     class Meta:
         ordering = ["-priority", "-created_at"]
