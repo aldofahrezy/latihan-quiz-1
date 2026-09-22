@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Bookmark</h1>
+
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Tambah</button>
+</form>
+
+<ul>
+{% for bookmark in bookmarks %}
+  <li>
+    <article>
+      <h2><a href="{{ bookmark.url }}">{{ bookmark.label }}</a></h2>
+      <p>Prioritas: {{ bookmark.priority }}</p>
+      <time datetime="{{ bookmark.created_at|date:'c' }}">
+        {{ bookmark.created_at|date:"d M Y" }}
+      </time>
+    </article>
+
+    <form method="post" action="{% url 'main:toggle_archive' bookmark.id %}">
+      {% csrf_token %}
+      <button type="submit">
+        {% if bookmark.is_archived %}Kembalikan{% else %}Arsipkan{% endif %}
+      </button>
+    </form>
+
+    <form method="post" action="{% url 'main:delete_bookmark' bookmark.id %}">
+      {% csrf_token %}
+      <button type="submit">Hapus</button>
+    </form>
+  </li>
+{% empty %}
+  <li>Belum ada bookmark tersimpan.</li>
+{% endfor %}
+</ul>
+{% endblock %}
